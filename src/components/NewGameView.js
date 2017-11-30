@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Button, Form } from 'semantic-ui-react';
 import Layout from '../components/Layout';
@@ -122,4 +121,4 @@ class NewGameView extends Component {
   }
 }
 
-export default connect()(NewGameView);
+export default NewGameView;

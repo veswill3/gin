@@ -40,12 +40,12 @@ const DeadwoodEntry = ({
   }
 
   return (
-    <div style={{ textAlign: 'center' }}>
-      <div style={{ padding: '0em 1em 1em 1em' }}>
+    <div className="deadwood-entry">
+      <div className="deadwood-message">
         {message}
       </div>
-      <div style={{ display: 'flex', flexDirection: 'row' }}>
-        <div style={{ flex: 1, padding: '0 1em 0 1em' }}>
+      <div className="row">
+        <div className="deadwood-input">
           <Input
             fluid
             type="number"
@@ -56,7 +56,7 @@ const DeadwoodEntry = ({
           />
           {showScoreChange && p1pts !== 0 && <h2>+{p1pts}</h2>}
         </div>
-        <div style={{ flex: 1, padding: '0 1em 0 1em' }}>
+        <div className="deadwood-input">
           <Input
             fluid
             type="number"

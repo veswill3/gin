@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Layout = ({ children, leftAction, rightAction }) => (
-  <div style={{ display: 'flex', minHeight: '100vh', flexDirection: 'column' }}>
-    <div style={{ flex: 1, padding: '1em 1em 0 1em' }}>
+  <div className="layout">
+    <div className="layout-content">
       {children}
     </div>
-    <div style={{ display: 'flex', flexDirection: 'row' }}>
-      <span style={{ flex: 1, padding: '1em 0.5em 1em 1em' }}>
+    <div className="row">
+      <span className="layout-action-left">
         {leftAction}
       </span>
-      <span style={{ flex: 1, padding: '1em 1em 1em 0.5em' }}>
+      <span className="layout-action-right">
         {rightAction}
       </span>
     </div>

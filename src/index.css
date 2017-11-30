@@ -1,0 +1,59 @@
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.action-btn {
+  margin-bottom: 1em;
+}
+.draw-button {
+  flex: 1;
+  margin: 0em 1em 1em 1em;
+}
+.deadwood-entry {
+  text-align: center;
+}
+.deadwood-message {
+  padding: 0em 1em 1em 1em;
+}
+.deadwood-input {
+  flex: 1;
+  padding: 0 1em 0 1em;
+}
+.hand-num {
+  text-align: right;
+  padding-right: 1em;
+  margin-bottom: 0;
+}
+.layout {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.layout-content {
+  flex: 1;
+  padding: 1em 1em 0 1em;
+}
+.layout-action-left {
+  flex: 1;
+  padding: 1em 0.5em 1em 1em;
+}
+.layout-action-right {
+  flex: 1;
+  padding: 1em 1em 1em 0.5em;
+}
+.player-actions {
+  flex: 1;
+  flex-direction: column;
+  padding: 0 1em 0 1em;
+}
+.player-info {
+  text-align: center;
+  flex: 1;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin: 1em;
+  padding: 1em;
+}
+.dealer {
+  color: red;
+}

@@ -6,10 +6,10 @@ const GameInfo = ({
   hand, name1, name2, score1, score2, dealer,
 }) => (
   <div>
-    <p style={{ textAlign: 'right', paddingRight: '1em', marginBottom: 0 }}>
+    <p className="hand-num">
       Hand {hand}
     </p>
-    <div style={{ display: 'flex', flexDirection: 'row' }}>
+    <div className="row">
       <PlayerInfo name={name1} score={score1} isDealer={dealer === 1} />
       <PlayerInfo name={name2} score={score2} isDealer={dealer === 2} />
     </div>

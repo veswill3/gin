@@ -13,9 +13,9 @@ MVP at the moment. no liting, tests, or anything fancy at the moment.
 - [X] add draw button
 - [X] redo with redux
 - [X] confirm before quit game
+- [X] swap inline style for css
 - [ ] allow jump forward before confirming a new hand
 - [ ] end of game indicator
-- [ ] swap inline style for css
 - [ ] update desktop display
 - [ ] add some game explanations/education
 - [ ] rewrite this readme

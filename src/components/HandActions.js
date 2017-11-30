@@ -5,7 +5,7 @@ import PlayerActions from './PlayerActions';
 
 const HandActions = ({ knock, callDraw }) => (
   <div>
-    <div style={{ display: 'flex', flexDirection: 'row' }}>
+    <div className="row">
       <PlayerActions
         onKnock={() => knock(1, false, false)}
         onGin={() => knock(1, true, false)}
@@ -17,7 +17,7 @@ const HandActions = ({ knock, callDraw }) => (
         onBigGin={() => knock(2, false, true)}
       />
     </div>
-    <div style={{ flex: 1, margin: '0em 1em 1em 1em' }}>
+    <div className="draw-button">
       <Button
         fluid
         onClick={callDraw}
