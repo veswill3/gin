@@ -12,7 +12,7 @@ MVP at the moment. no liting, tests, or anything fancy at the moment.
 - [X] dont allow knocking with more than 10 pts dw
 - [X] add draw button
 - [X] redo with redux
-- [ ] confirm before quit game
+- [X] confirm before quit game
 - [ ] allow jump forward before confirming a new hand
 - [ ] end of game indicator
 - [ ] swap inline style for css
