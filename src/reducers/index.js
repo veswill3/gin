@@ -14,6 +14,7 @@ const initialState = {
   names: [null, null],
   score: [0, 0],
   history: [], // --> { whoCalled: 1, score: [4, 0], deadwood: [3, 7], gin: false, bigGin: false }
+  currentHand: 0,
 };
 
 const ginApp = (state = initialState, action) => {
@@ -60,9 +61,10 @@ const ginApp = (state = initialState, action) => {
         ...state,
         ...resetHand,
         score,
+        currentHand: state.currentHand + 1,
         // add to history
         history: [
-          ...state.history,
+          ...state.history.slice(0, state.currentHand), // wipe out possible futures
           {
             whoCalled,
             score,
@@ -77,8 +79,9 @@ const ginApp = (state = initialState, action) => {
       return {
         ...state,
         ...resetHand,
+        currentHand: state.currentHand + 1,
         history: [
-          ...state.history,
+          ...state.history.slice(0, state.currentHand), // wipe out possible futures
           {
             whoCalled: 0,
             score: state.score,
@@ -87,37 +90,30 @@ const ginApp = (state = initialState, action) => {
             bigGin: false,
           },
         ],
-      }; }
+      };
+    }
     case 'JUMP_TO_HAND': {
-      if (action.number === 0) {
-        // basically starting the game over
-        return {
-          ...state,
-          ...resetHand,
-          score: [0, 0],
-          history: [],
-        };
-      }
-      // get history up to the hand at index
-      const partOfHistory = state.history.slice(0, action.number);
-      // extract the scores from that point
-      const { score } = partOfHistory[partOfHistory.length - 1];
+      const { number } = action;
+      const score = number === 0 ? [0, 0] : state.history[number - 1].score;
       return {
         ...state,
         ...resetHand,
+        currentHand: number,
         score,
-        history: partOfHistory,
-      }; }
+      };
+    }
     case 'GO_TO_HISTORY': {
       return {
         ...state,
         showHistory: true,
-      }; }
+      };
+    }
     case 'RETURN_FROM_HISTORY': {
       return {
         ...state,
         showHistory: false,
-      }; }
+      };
+    }
     case 'QUIT_GAME':
     { return initialState; }
     case 'NEW_GAME': {
@@ -126,8 +122,10 @@ const ginApp = (state = initialState, action) => {
         ...resetHand,
         options: action.options,
         names: action.names,
+        currentHand: 0,
         history: [],
-      }; }
+      };
+    }
     default:
       return state;
   }

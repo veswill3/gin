@@ -14,7 +14,7 @@ MVP at the moment. no liting, tests, or anything fancy at the moment.
 - [X] redo with redux
 - [X] confirm before quit game
 - [X] swap inline style for css
-- [ ] allow jump forward before confirming a new hand
+- [X] allow jump forward before confirming a new hand
 - [ ] end of game indicator
 - [ ] update desktop display
 - [ ] add some game explanations/education

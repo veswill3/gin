@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import GameInfo from '../components/GameInfo';
 
 const mapStateToProps = state => ({
-  hand: state.history.length + 1,
+  currentHand: state.currentHand + 1, // programmers count from zero, but not users
   name1: state.names[0],
   name2: state.names[1],
   score1: state.score[0],

@@ -15,11 +15,18 @@ class HistoryView extends Component {
       gin: PropTypes.bool.isRequired,
       bigGin: PropTypes.bool.isRequired,
     })).isRequired,
+    currentHand: PropTypes.number.isRequired,
     jumpToHand: PropTypes.func.isRequired,
     goBack: PropTypes.func.isRequired,
   }
 
-  state = { selectedRow: null }
+  constructor(props) {
+    super(props);
+    this.state = {
+      // select the row of the current timeline, unless we are in the present
+      selectedRow: props.currentHand === props.history.length ? null : props.currentHand,
+    };
+  }
 
   replayClick = () => {
     if (this.state.selectedRow === null) return;
@@ -93,6 +100,21 @@ class HistoryView extends Component {
                 </Table.Row>
               );
             })}
+            <Table.Row
+              onClick={() =>
+                (this.state.selectedRow === history.length ?
+                this.setState({ selectedRow: null }) :
+                this.setState({ selectedRow: history.length }))
+              }
+              active={history.length === this.state.selectedRow}
+            >
+              <Table.Cell>{history.length + 1}</Table.Cell>
+              <Table.Cell>?</Table.Cell>
+              <Table.Cell>-</Table.Cell>
+              <Table.Cell>?</Table.Cell>
+              <Table.Cell>-</Table.Cell>
+              <Table.Cell>in progress...</Table.Cell>
+            </Table.Row>
           </Table.Body>
         </Table>
       </Layout>

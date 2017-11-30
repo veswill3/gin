@@ -5,6 +5,7 @@ import HistoryView from '../components/HistoryView';
 const mapStateToProps = state => ({
   names: state.names,
   history: state.history,
+  currentHand: state.currentHand,
 });
 
 const mapDispatchToProps = {
