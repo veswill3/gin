@@ -2,15 +2,21 @@
   "name": "gin",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
+  "devDependencies": {
+    "enzyme": "^3.2.0",
+    "enzyme-adapter-react-16": "^1.1.0",
     "gh-pages": "^1.0.0",
+    "eslint": "^4.12.0",
+    "react-scripts": "1.0.17"
+  },
+  "dependencies": {
+    "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2",
     "semantic-ui-css": "^2.2.12",
     "semantic-ui-react": "^0.76.0"
-  },
-  "devDependencies": {
-    "react-scripts": "1.0.17"
   },
   "scripts": {
     "predeploy": "npm run build",
@@ -18,7 +24,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint ./"
   },
   "homepage": "https://veswill3.github.io/gin"
 }
