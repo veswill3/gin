@@ -1,7 +1,7 @@
 /* eslint react/no-array-index-key: 0 */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Button, Table } from 'semantic-ui-react';
+import { Table } from 'semantic-ui-react';
 import Layout from './Layout';
 import { wasUndercut } from '../Util';
 
@@ -38,15 +38,16 @@ class HistoryView extends Component {
     const { names, history, goBack } = this.props;
     return (
       <Layout
-        leftAction={
-          <Button
-            fluid
-            onClick={this.replayClick}
-            disabled={this.state.selectedRow === null}
-          >Replay Hand
-          </Button>
-        }
-        rightAction={<Button fluid primary onClick={goBack}>Back</Button>}
+        leftActionProps={{
+          onClick: this.replayClick,
+          disabled: this.state.selectedRow === null,
+          content: 'Replay Hand',
+        }}
+        rightActionProps={{
+          primary: true,
+          onClick: goBack,
+          content: 'Back',
+        }}
       >
         <Table unstackable>
           <Table.Header>

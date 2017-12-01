@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Button, Form } from 'semantic-ui-react';
+import { Form } from 'semantic-ui-react';
 import Layout from '../components/Layout';
 
 class NewGameView extends Component {
@@ -53,16 +53,16 @@ class NewGameView extends Component {
 
     return (
       <Layout
-        leftAction={<Button fluid onClick={this.handleClear}>Reset</Button>}
-        rightAction={
-          <Button
-            fluid
-            primary
-            onClick={this.handleNewgame}
-            disabled={disableStart}
-            content="Start"
-          />
-        }
+        leftActionProps={{
+          content: 'Reset',
+          onClick: this.handleClear
+        }}
+        rightActionProps={{
+          content: 'Start',
+          onClick: this.handleNewgame,
+          primary: true,
+          disabled: disableStart,
+        }}
       >
         <Form>
           <h2>Player Info</h2>

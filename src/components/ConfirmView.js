@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'semantic-ui-react';
 import Layout from './Layout';
 import GameInfo from '../containers/GameInfo';
 import DeadwoodEntry from '../containers/DeadwoodEntry';
@@ -13,21 +12,21 @@ const ConfirmView = ({
   onConfirm,
 }) => (
   <Layout
-    leftAction={<Button fluid onClick={onCancel}>Cancel</Button>}
-    rightAction={
-      <Button
-        fluid
-        primary
-        onClick={onConfirm}
-        content="Confirm"
-        disabled={
-          dw1 === '' || dw2 === '' ||
-          // you cannot knock with more than 10 pts deadwood
-          (whoCalled === 1 && dw1 > 10) ||
-          (whoCalled === 2 && dw2 > 10)
-        }
-      />
-    }
+    leftActionProps={{
+      onClick: onCancel,
+      content: 'Cancel',
+    }}
+    rightActionProps={{
+      primary: true,
+      onClick: onConfirm,
+      content: 'Confirm',
+      disabled: (
+        dw1 === '' || dw2 === '' ||
+        // you cannot knock with more than 10 pts deadwood
+        (whoCalled === 1 && dw1 > 10) ||
+        (whoCalled === 2 && dw2 > 10)
+      ),
+    }}
   >
     <GameInfo />
     <DeadwoodEntry />
