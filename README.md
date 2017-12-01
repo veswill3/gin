@@ -20,7 +20,7 @@ This is my first shot at making a PWA with react and redux.
 - [X] rewrite this readme
 - [X] disable pinch zoom
 - [X] simplify creating layout actions
-- [ ] end of game indicator
+- [X] end of game indicator
 - [ ] update desktop display
 - [ ] add some game explanations/education
 - [ ] reload from localStorage, save history of past games

@@ -8,16 +8,17 @@ class PlayView extends Component {
   static propTypes = {
     onQuitClick: PropTypes.func.isRequired,
     onHxClick: PropTypes.func.isRequired,
+    isGameOver: PropTypes.bool.isRequired,
   }
 
   state = { tryQuit: false }
 
   render() {
-    const { onQuitClick, onHxClick } = this.props;
+    const { onQuitClick, onHxClick, isGameOver } = this.props;
 
     let leftActionProps = {
       content: 'Quit',
-      onClick: () => this.setState({ tryQuit: true }),
+      onClick: isGameOver ? onQuitClick : () => this.setState({ tryQuit: true }),
     };
     let rightActionProps = {
       primary: true,
@@ -38,7 +39,11 @@ class PlayView extends Component {
     return (
       <Layout leftActionProps={leftActionProps} rightActionProps={rightActionProps}>
         <GameInfo />
-        <HandActions />
+        {isGameOver ?
+          <h2 className="gameover-message">Game Over</h2>
+          :
+          <HandActions />
+        }
       </Layout>
     );
   }

@@ -24,6 +24,9 @@
   padding-right: 1em;
   margin-bottom: 0;
 }
+.gameover-message {
+  text-align: center;
+}
 .layout {
   display: flex;
   min-height: 100vh;

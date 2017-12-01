@@ -44,13 +44,9 @@ class NewGameView extends Component {
       undercutBonus,
       winLimit,
     } = this.state;
-    const disableStart = !player1
-      || !player2
-      || !ginBonus
-      || !bigGinBonus
-      || !undercutBonus
-      || !winLimit;
 
+    // dont allow any flasy values
+    const disableStart = Object.keys(this.state).some(key => !this.state[key]);
     return (
       <Layout
         leftActionProps={{
@@ -85,7 +81,7 @@ class NewGameView extends Component {
             />
           </Form.Group>
           <h2>Game Options</h2>
-          <Form.Group unstackable widths="equal">
+          <Form.Group>
             <Form.Input
               type="number"
               label="Gin Bonus"
