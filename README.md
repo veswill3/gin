@@ -18,7 +18,9 @@ This is my first shot at making a PWA with react and redux.
 - [X] swap inline style for css
 - [X] allow jump forward before confirming a new hand
 - [X] rewrite this readme
+- [X] disable pinch zoom
 - [ ] end of game indicator
 - [ ] update desktop display
 - [ ] add some game explanations/education
 - [ ] reload from localStorage, save history of past games
+- [ ] simplify creating layout actions
