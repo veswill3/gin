@@ -51,7 +51,7 @@ class NewGameView extends Component {
       <Layout
         leftActionProps={{
           content: 'Reset',
-          onClick: this.handleClear
+          onClick: this.handleClear,
         }}
         rightActionProps={{
           content: 'Start',

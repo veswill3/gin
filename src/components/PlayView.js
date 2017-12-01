@@ -28,7 +28,7 @@ class PlayView extends Component {
     if (this.state.tryQuit) {
       leftActionProps = {
         content: 'Cancel',
-        onClick: () => this.setState({ tryQuit: false })
+        onClick: () => this.setState({ tryQuit: false }),
       };
       rightActionProps = {
         content: 'Confirm Quit',

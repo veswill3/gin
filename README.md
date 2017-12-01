@@ -1,7 +1,9 @@
 Gin
 ===
 
-Learn to play [gin rummy](https://en.wikipedia.org/wiki/Gin_rummy), keep track of your score, and whos turn it is to deal.
+Learn to play [gin rummy](https://en.wikipedia.org/wiki/Gin_rummy), keep track of your score, and whose turn it is to deal.
+
+See it live at https://veswill3.github.io/gin.
 
 This is my first shot at making a PWA with react and redux.
 
