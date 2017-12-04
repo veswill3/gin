@@ -1,11 +1,15 @@
 Gin
 ===
 
-Learn to play [gin rummy](https://en.wikipedia.org/wiki/Gin_rummy), keep track of your score, and whose turn it is to deal.
-
-See it live at https://veswill3.github.io/gin.
-
+Learn to play [gin rummy](https://en.wikipedia.org/wiki/Gin_rummy), keep track of your score, and whose turn it is to deal. See it live at https://veswill3.github.io/gin.
 This is my first shot at making a PWA with react and redux.
+
+![Creating a new game](screenshots/new_game.png?raw=true "Creating a new game")
+![During play](screenshots/mid_game.png?raw=true "During play")
+![Helpful reminders](screenshots/too_much_deadwood.png?raw=true "Helpful reminders")
+![Going Gin](screenshots/going_gin.png?raw=true "Going Gin")
+![History view](screenshots/history.png?raw=true "History view")
+![Scoring explanations](screenshots/undercut.png?raw=true "Scoring explanations")
 
 ### TODO:
 
