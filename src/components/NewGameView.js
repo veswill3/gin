@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Form } from 'semantic-ui-react';
+import { Header, Form } from 'semantic-ui-react';
 import Layout from '../components/Layout';
+import icon from '../icon.svg';
 
 class NewGameView extends Component {
   static propTypes = {
@@ -60,8 +61,13 @@ class NewGameView extends Component {
           disabled: disableStart,
         }}
       >
+        <Header
+          as='h2'
+          image={icon}
+          content='Gin'
+          subheader='Gin Rummy made easy'
+        />
         <Form>
-          <h2>Player Info</h2>
           <Form.Group>
             <Form.Input
               label="Player One"
@@ -80,7 +86,7 @@ class NewGameView extends Component {
               maxLength="10"
             />
           </Form.Group>
-          <h2>Game Options</h2>
+          <h2>Options</h2>
           <Form.Group>
             <Form.Input
               type="number"
