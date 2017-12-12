@@ -137,20 +137,20 @@ class NewGameView extends Component {
         <p>
           On the first turn of each round the non-dealer can decline to take the up-card, in which
           case the dealer can pick it up. If the dealer also declines, the non-dealer draws from the
-          discard pile.
+          draw pile.
         </p>
         <p>
           Taking turns, each player starts by drawing a card from the top of either the draw or
           discard pile, and then discards a card face up. The round ends when one player knocks or
-          only two cards remain. A player may only knock on their turn when they have fewer than 10
-          points of deadwood. You may knock on the first turn or before discarding, though you are
-          never required to knock.
+          only two cards remain, in which case the round ends in a draw. A player may only knock on
+          their turn when they have fewer than 10 points of deadwood. You may knock on the first
+          turn or before discarding, though you are never required to knock.
         </p>
         <h3>Scoring</h3>
         <p>
           When a player has knocked, they will organize their cards into melds (sets or runs of 3+
           cards) and lay them face up on the table. A card may only belong to a single meld. The
-          opponent will do that same, and have the opportunity to lay cards off the knocking players
+          opponent will do that same and have the opportunity to lay cards off the knocking players
           melds. Any unmatched cards count towards that player&#39;s deadwood. Aces are worth one
           point, numbered cards equal their value, and face cards are all worth ten points of
           deadwood.
