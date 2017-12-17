@@ -6,6 +6,7 @@ const mapStateToProps = state => ({
   names: state.names,
   history: state.history,
   currentHand: state.currentHand,
+  winLimit: state.options.winLimit,
 });
 
 const mapDispatchToProps = {

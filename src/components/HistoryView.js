@@ -18,6 +18,7 @@ class HistoryView extends Component {
     currentHand: PropTypes.number.isRequired,
     jumpToHand: PropTypes.func.isRequired,
     goBack: PropTypes.func.isRequired,
+    winLimit: PropTypes.number.isRequired,
   }
 
   constructor(props) {
@@ -35,7 +36,8 @@ class HistoryView extends Component {
   }
 
   render() {
-    const { names, history, goBack } = this.props;
+    const { names, history, goBack, winLimit } = this.props;
+    let showInProgressRow = true;
     return (
       <Layout
         leftActionProps={{
@@ -75,8 +77,12 @@ class HistoryView extends Component {
               let text;
               if (whoCalled === 0) text = 'Draw';
               else {
-                text = whoCalled === 1 ? names[0] : names[1];
-                if (gin) text += ' went Gin';
+                text = names[whoCalled - 1];
+                if (score[whoCalled - 1] >= winLimit) {
+                  showInProgressRow = false;
+                  text += ' won!!';
+                }
+                else if (gin) text += ' went Gin';
                 else if (bigGin) text += ' got Big Gin';
                 else if (wasUndercut(whoCalled, deadwood[0], deadwood[1])) {
                   text += ' was undercut';
@@ -101,21 +107,23 @@ class HistoryView extends Component {
                 </Table.Row>
               );
             })}
-            <Table.Row
-              onClick={() =>
-                (this.state.selectedRow === history.length ?
-                this.setState({ selectedRow: null }) :
-                this.setState({ selectedRow: history.length }))
-              }
-              active={history.length === this.state.selectedRow}
-            >
-              <Table.Cell>{history.length + 1}</Table.Cell>
-              <Table.Cell>?</Table.Cell>
-              <Table.Cell>-</Table.Cell>
-              <Table.Cell>?</Table.Cell>
-              <Table.Cell>-</Table.Cell>
-              <Table.Cell>in progress...</Table.Cell>
-            </Table.Row>
+            {showInProgressRow &&
+              <Table.Row
+                onClick={() =>
+                  (this.state.selectedRow === history.length ?
+                  this.setState({ selectedRow: null }) :
+                  this.setState({ selectedRow: history.length }))
+                }
+                active={history.length === this.state.selectedRow}
+              >
+                <Table.Cell>{history.length + 1}</Table.Cell>
+                <Table.Cell>?</Table.Cell>
+                <Table.Cell>-</Table.Cell>
+                <Table.Cell>?</Table.Cell>
+                <Table.Cell>-</Table.Cell>
+                <Table.Cell>in progress...</Table.Cell>
+              </Table.Row>
+            }
           </Table.Body>
         </Table>
       </Layout>

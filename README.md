@@ -29,7 +29,7 @@ This is my first shot at making a PWA with react and redux.
 - [X] end of game indicator
 - [X] add some game explanations/education
 - [X] reload from localStorage
+- [X] When game is over, history should say who won
 - [ ] improove desktop experience
 - [ ] save history of past games
 - [ ] Fireworks when I win
-- [ ] When game is over, history should say who won
