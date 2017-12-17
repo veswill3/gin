@@ -27,6 +27,9 @@ This is my first shot at making a PWA with react and redux.
 - [X] disable pinch zoom
 - [X] simplify creating layout actions
 - [X] end of game indicator
-- [ ] update desktop display
-- [ ] add some game explanations/education
-- [ ] reload from localStorage, save history of past games
+- [X] add some game explanations/education
+- [X] reload from localStorage
+- [ ] improove desktop experience
+- [ ] save history of past games
+- [ ] Fireworks when I win
+- [ ] When game is over, history should say who won
