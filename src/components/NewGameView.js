@@ -70,7 +70,7 @@ class NewGameView extends Component {
         <Form>
           <Form.Group>
             <Form.Input
-              label="Player One"
+              label="Player One (Dealer)"
               placeholder="player one"
               name="player1"
               value={player1}
